@@ -1,0 +1,20 @@
+$ migrate make [name] <config|cf>
+[?*name] Enter the migration name: input
+[?config] Enter path of config ("./config/database.ts"): input
+[?table] Enter table name: input
+[?within_transaction] Do you need to enable migration support within the transaction? : Y/n
+@if table
+[?create] Do you want to create or alter table for this migration? (create) : Create(c)/alter(a)
+[?!add_now] Do you want to add schema now? : y/N
+@if add_now
+@loop
+Enter an empty statment when done.
+[?] Select the statment you want to add. (add column) : [list of statment]
+[?] Select the datatype of column. (string) : [list of datatype]
+@loop
+Enter an empty attribute when done.
+[?] Select the attribute of column. (string) : [list of attributes]
+[?] Enter default value : input
+[?] Required? :  y/N
+@end
+@end
